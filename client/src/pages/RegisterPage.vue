@@ -1,8 +1,6 @@
 <template>
   <v-container class="fill-height">
-
     <v-row justify="center">
-
       <v-form style="width: 400px;"
               v-model="formValid"
               @submit.prevent="login"
@@ -10,15 +8,22 @@
               lazy-validation>
 
         <v-row justify="center">
-          <h1>Login</h1>
+          <h1>Register</h1>
         </v-row>
 
         <v-text-field
-            v-model="email"
+            v-model="fName"
             autofocus
             prepend-inner-icon="mdi-email"
-            label="Email"
-            :rules="[rules.required ,rules.emailValid]">
+            label="Full Name"
+            :rules="[rules.required]">
+        </v-text-field>
+
+        <v-text-field v-model="email"
+                      autofocus
+                      prepend-inner-icon="mdi-email"
+                      label="Email"
+                      :rules="[rules.required ,rules.emailValid]">
         </v-text-field>
 
         <v-text-field
@@ -39,7 +44,7 @@
                :disabled="!formValid"
                class="mr-4 mt-2"
                type="submit">
-          submits
+          Register
         </v-btn>
       </v-form>
     </v-row>
@@ -51,8 +56,10 @@ import {ApiUrlService} from '@/modules/ApiUrlService'
 import {TokenStorage}  from '@/modules/TokenStorage'
 
 export default {
-  name:    'Login',
-  data:    () => ({
+  name: 'app-register-page',
+
+  data: () => ({
+    fName:        '',
     email:        '',
     password:     '',
     hidePassword: true,
@@ -66,9 +73,10 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await this.$http.post(ApiUrlService.loginUrl(),
+        const response = await this.$http.post(ApiUrlService.registerUrl(),
             {
               email:    this.email,
+              fName:    this.fName,
               password: this.password,
             })
 

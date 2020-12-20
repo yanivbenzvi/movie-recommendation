@@ -3,8 +3,9 @@ import VueRouter      from 'vue-router'
 import {TokenStorage} from '@/modules/TokenStorage'
 
 // importing pages
-import HomePage              from '../pages/HomePage'
-import Login                 from '../pages/LoginPage'
+import HomePage from '../pages/HomePage'
+import Login    from '../pages/LoginPage'
+import Register from '../pages/RegisterPage'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,14 @@ const routes = [
         path:      '/login',
         name:      'login',
         component: Login,
+        meta:      {
+            guest: true,
+        },
+    },
+    {
+        path:      '/register',
+        name:      'register',
+        component: Register,
         meta:      {
             guest: true,
         },
