@@ -8,7 +8,7 @@ export class ApiUrlService {
 
     static loginUrl(){return ApiUrlService.apiFullRootUrl + 'auth/login'}
 
-    static registerUrl(){return ApiUrlService.apiFullRootUrl + 'auth/register'}
+    static registerUrl(){return ApiUrlService.apiFullRootUrl + 'users'}
 
     static refreshTokenUrl(){return ApiUrlService.apiFullRootUrl + 'auth/refresh-token'}
 

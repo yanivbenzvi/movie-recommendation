@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "movie-recommendation-299207",
+  "private_key_id": "f4be504ff39ddec6ccbf01ec1964447bad130ae5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDJFi5pinoO1nnF\n86m+C6fz+ue4eiTss85gskA6ymQAbjIfJaC2Q8FybDaXMuNhx6B33KQfXs0wiWU2\nNxFFFnmfLLm8LdMc6EEmRSXpqL0VhrTi28stBM7hafNgOtgTPQwGQEWovmDyVnsS\nVQPHF+aFFy6i2NuHoLiSiRR+iqvI7iV1wn7rE/dDgOY4uz851X61cxgSs9lSoMBH\nul71QwzmkeEjtnGDBTNQzDTj6IydhugLXkX9/EPMcxLsTlPE62N58YTraipGLHAB\n6E7FH0pZxgpeVscN53aBf5enW1GU15ymPJi/uSl2ndUsfqXBpaVGEgG/9LhiS3Pw\nYEuEoUw3AgMBAAECggEAJUG5Vq+j/sTJKh6DuCTzuNYngbwLxFlqJutP0DS4g4Xn\nPnMbzDlQibE4ChqRG4g/mIWmWPOZI+GJAZsBVaIc5ZuFTDLXVxdHHt6X8Ctl4Suk\nrxWXFt+5rvUQ9Sbh6uqYJD5bSbEASFYylkpvGT+547XQW7a/Mela2TeRtwJdYqw8\ni07I6wCwJlMdM5VcydfrLTP3W1X97AztwCpqlBGrGcS6GMu6R7p61m+QWbEfYNRd\nVR1DMgaZeozDNhDaKYo+TSGR2aGTlkl25pRI178v3ZL+kJmYop/FNxBshjOAomde\nrJRB8KrEMA4b6OSqhqdzyXh4GHvZ9SRBJaUOfKljXQKBgQD5dp89+stmlGFTIuQ3\nCwCak2Ll1cM7MXa4+uQnjrJSDvVq30fw59D2vKJ9r8tfjm0i8itMpek6p/SFKLkL\nep819ecQo50z+nk2C+seB8gz+iUCuFoePE1eu8g1d/vCaFRH9P50zpBgmieG/oH7\nSnnGxa1xhiA6dhiamYUd8UGI7QKBgQDOWw1y+RVXQ6sclZSSEmAyS62UUfkutzb/\nrTmAY+SlpQa2ZASEQ9zDEZ6HxaPHXcRDtnHIwJORZg6r5Sq+zMWDfqral4cGeB7v\nc+c2iWmFp455U2bL9Z0XDGeVJodFw9NOtLOoD2CdihhhqQaONSPTxZ0Frh1C0RIn\nW+QFAed5MwKBgQCGGuXKLOtxTqzvQ1+J04lUj4zn3z1fsdyP3pgOR+DGyjHWbQfA\nku475fY4OOvMh8VVtvfd8YbquGVzvAuWBypVmMbJpBsbWTgV/Nw9PZO7lWqWBsKz\nZFl3Zt1fGQwnW2yLbkHoSy9ELzq2kFUR4NyMJbJyx9bFdr0NRyBPk2VWlQKBgQCt\nB6pSUsvzPTl4oXBPv3rMEar96HKCGnzSjMTfhGOQBb2IKHulEGZHZzm/7Rh0ropI\noO3uAJR8YdBBkMpz7K5doVPQMSi2YvjFnjEtCLHjsWkFEMrskQnk7rDYXtMky5we\nreTLMgG4d7gUA7AMhECDbXtJ7QJ6KWcIe8PJ8xvOAwKBgAIxh844OD86XuU0GRiY\n26Xu/75MBxEhh33FSS93ECxTM1r8vnzFzZfIJyqT1X6Pgv6str4JHkZCS2/da6bE\nDWExrxHWOZvqYO4GNkOc7FC/yO+jTrjQCS5K7Auqt7Fkt6sOsLhXSvlQLLBxOLnE\nqdYfi+PNIFPg0muMy8RpjHK9\n-----END PRIVATE KEY-----\n",
+  "client_email": "movie-recommendation-299207@appspot.gserviceaccount.com",
+  "client_id": "108063185419440562156",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/movie-recommendation-299207%40appspot.gserviceaccount.com"
+}

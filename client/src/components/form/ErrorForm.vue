@@ -2,9 +2,9 @@
   <v-form-card :callbackAction="callbackAction"
                error
                @input="$emit('input')"
-               title="שגיאה">
+               title="Error">
     <div class="mx-3">
-    אירעה שגיאה, הפעולה נכשלה.
+    Error occurred, operation failed.
     <br/>({{errorMessage}})
     </div>
   </v-form-card>

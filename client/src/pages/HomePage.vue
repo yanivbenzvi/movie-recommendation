@@ -21,15 +21,23 @@
       <v-toolbar-title>Movie recommendation</v-toolbar-title>
 
       <v-spacer></v-spacer>
+      <template v-if="isAuth">
+        <v-btn dark class="mx-1" @click="logout">
+          <v-icon>login</v-icon>
+          logout
+        </v-btn>
+      </template>
+      <template v-else>
 
-      <v-btn dark class="mx-1" to="/login">
-        <v-icon>login</v-icon>
-        login
-      </v-btn>
+        <v-btn dark class="mx-1" to="/login">
+          <v-icon>login</v-icon>
+          login
+        </v-btn>
 
-      <v-btn dark class="mx-1" to="/register">
-        register
-      </v-btn>
+        <v-btn dark class="mx-1" to="/register">
+          register
+        </v-btn>
+      </template>
     </v-app-bar>
 
     <v-sheet id="scrolling-techniques-4"
@@ -41,7 +49,27 @@
 </template>
 
 <script>
+import {TokenStorage} from '../modules/TokenStorage'
+
 export default {
   name: 'app-home-page',
+
+  data() {
+    return {
+      isAuth: false,
+    }
+  },
+
+  methods: {
+    logout() {
+      TokenStorage.clear()
+      this.isAuth = false
+    },
+  },
+
+  beforeMount() {
+    this.isAuth = TokenStorage.isAuthenticated()
+  },
+
 }
 </script>

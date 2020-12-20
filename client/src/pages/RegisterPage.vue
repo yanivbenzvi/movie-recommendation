@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-form style="width: 400px;"
               v-model="formValid"
-              @submit.prevent="login"
+              @submit.prevent="register"
               ref="form"
               lazy-validation>
 
@@ -71,19 +71,17 @@ export default {
   }),
 
   methods: {
-    async login() {
+    async register() {
       try {
-        const response = await this.$http.post(ApiUrlService.registerUrl(),
+        console.log(ApiUrlService.registerUrl())
+        await this.$http.post(ApiUrlService.registerUrl(),
             {
               email:    this.email,
-              fName:    this.fName,
+              name:    this.fName,
               password: this.password,
             })
 
-        TokenStorage.storeToken(response.data.token.accessToken)
-        TokenStorage.storeRefreshToken(response.data.token.refreshToken)
-        TokenStorage.storeUserEmail(response.data.user.email)
-        await this.$router.push('/')
+        await this.$router.push('/login')
 
       } catch (error) {
         console.error(error.response)
