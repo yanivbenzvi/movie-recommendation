@@ -2,7 +2,7 @@ const inDevelopment      = process.env.NODE_ENV === 'development'
 
 
 export class ApiUrlService {
-    static apiRootUrl = inDevelopment ? 'http://localhost:3000/': 'https://api-dot-movie-recommendation-299207.ew.r.appspot.com/' //TODO: add production url
+    static apiRootUrl = inDevelopment ? 'http://localhost:3000/': 'https://api-dot-movie-recommendation-299207.ew.r.appspot.com/'
     static apiCurrentVersion = 'v1/'
 
     static apiFullRootUrl = ApiUrlService.apiRootUrl + ApiUrlService.apiCurrentVersion
@@ -13,6 +13,6 @@ export class ApiUrlService {
 
     static refreshTokenUrl(){return ApiUrlService.apiFullRootUrl + 'auth/refresh-token'}
 
-    static getMovieList(){return ApiUrlService.apiFullRootUrl + 'get-movie-list'}
+    static getMovieList(){return ApiUrlService.apiFullRootUrl + 'movie'}
 
 }

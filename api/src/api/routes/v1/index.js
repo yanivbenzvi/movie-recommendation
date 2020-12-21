@@ -1,6 +1,7 @@
 import express    from 'express'
 import userRoutes from './user.route'
 import authRoutes from './auth.route'
+import movieRoutes from './movie.route'
 
 const router = express.Router()
 /**
@@ -15,5 +16,6 @@ router.use('/docs', express.static('docs'))
 
 router.use('/users', userRoutes)
 router.use('/auth', authRoutes)
+router.use('/movie', movieRoutes)
 
 module.exports = router

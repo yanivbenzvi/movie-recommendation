@@ -1,5 +1,5 @@
 {
-  "name": "benchmark-frontend",
+  "name": "movie-recommendation",
   "version": "0.1.0",
   "private": true,
   "scripts": {

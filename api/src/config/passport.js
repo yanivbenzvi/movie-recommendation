@@ -1,9 +1,9 @@
 import {Strategy as JwtStrategy} from 'passport-jwt'
 import BearerStrategy            from 'passport-http-bearer'
-import {ExtractJwt}  from 'passport-jwt'
-import {jwtSecret}   from './vars'
-import authProviders from '../api/services/authProviders'
-import User                      from '../api/models/user.model'
+import {ExtractJwt}              from 'passport-jwt'
+import {jwtSecret}               from './vars'
+import authProviders             from '../api/services/authProviders'
+import {User}                    from '../api/models/user.model'
 
 const jwtOptions = {
     secretOrKey:    jwtSecret,
@@ -12,7 +12,9 @@ const jwtOptions = {
 
 const jwt = async (payload, done) => {
     try {
-        const user = await User.findById(payload.sub)
+        console.log(payload)
+        const user = await User.findByEmail(payload.sub)
+        console.log(user)
         if (user) {
             return done(null, user)
         }
@@ -33,6 +35,4 @@ const oAuth = service => async (token, done) => {
 }
 export default {
     jwt:      new JwtStrategy(jwtOptions, jwt),
-    facebook: new BearerStrategy(oAuth('facebook')),
-    google:   new BearerStrategy(oAuth('google')),
 }

@@ -40,19 +40,26 @@
       </template>
     </v-app-bar>
 
-    <v-sheet id="scrolling-techniques-4"
-             class="overflow-y-auto"
-             max-height="600">
-      <v-container></v-container>
-    </v-sheet>
+      <v-container style="margin-top: 120px"  >
+        <app-movie-list v-if="isAuth"/>
+        <template v-else>
+          In order to view movie recommendation you have to login.
+        </template>
+      </v-container>
   </div>
 </template>
 
 <script>
 import {TokenStorage} from '../modules/TokenStorage'
+import MovieList      from '../components/MovieList'
+import WishList       from '../components/WishList'
 
 export default {
-  name: 'app-home-page',
+  name:       'app-home-page',
+  components: {
+    'app-movie-list':      MovieList,
+    'app-movie-wish-list': WishList,
+  },
 
   data() {
     return {
