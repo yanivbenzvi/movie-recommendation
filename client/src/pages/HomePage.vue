@@ -53,7 +53,11 @@
         </v-tabs>
       </template>
     </v-app-bar>
+    <v-sheet
+        id="scrolling-techniques-4"
+        class="overflow-y-auto"
 
+    >
       <v-container style="margin-top: 220px">
         <template v-if="!isAuth">
           In order to view movie recommendation you have to login.
@@ -62,12 +66,13 @@
           <v-tab-item key="home">
             <app-movie-list v-if="isAuth"/>
           </v-tab-item>
-          <v-tab-item key="wish list">
+          <v-tab-item key="wish list" v-if="tab === 1">
             <app-movie-wish-list/>
           </v-tab-item>
         </v-tabs-items>
 
       </v-container>
+    </v-sheet>
   </div>
 </template>
 

@@ -39,14 +39,21 @@
 
 <script>
 
+import {ApiUrlService} from '@/modules/ApiUrlService'
+import {TokenStorage}  from '@/modules/TokenStorage'
+
 export default {
   name: 'app-movie',
 
   props: ['movie', 'wishList'],
 
   methods: {
-    addToWishList(id) {
-      console.log(id)
+    async addToWishList(id) {
+      const response = await this.$http.post(ApiUrlService.addMovieWishList(),
+          {
+            movie: id,
+            email: TokenStorage.getUserEmail()
+          })
     },
   },
 }

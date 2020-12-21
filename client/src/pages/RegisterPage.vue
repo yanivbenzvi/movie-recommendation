@@ -73,7 +73,6 @@ export default {
   methods: {
     async register() {
       try {
-        console.log(ApiUrlService.registerUrl())
         await this.$http.post(ApiUrlService.registerUrl(),
             {
               email:    this.email,

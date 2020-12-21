@@ -93,14 +93,10 @@ export class Movie {
     }
 
     static async getById(id) {
-        const query    = datastore
-            .createQuery('movies')
-            .filter('__key__', '=', id)
-            .limit(1)
-        const [movies] = await datastore.runQuery(query)
+        const taskKey = datastore.key(['movies',parseInt(id)])
+        const [movies] = await datastore.get(taskKey);
         console.log(movies)
         movies['id'] = movies[datastore.KEY].id
-        return new Movie(movies)
-
+        return movies
     }
 }

@@ -68,7 +68,7 @@ export class Wishlist {
     async save() {
         let schema    = this.toSchema()
         schema['key'] = datastore.key('wishList')
-
+        console.log(schema)
         try {
             console.log(schema)
             await datastore.save(schema)
@@ -76,6 +76,20 @@ export class Wishlist {
             console.error('ERROR:', err)
         }
         return this
+    }
+
+    async update() {
+        let schema = {}
+        Object.keys(this).forEach(key => schema[key] = this[key])
+        const key = datastore.key(['wishList', parseInt(this.id)])
+        delete schema.id
+
+        const entity = {
+            key:  key,
+            data: schema,
+        }
+
+        await datastore.update(entity)
     }
 
     /**

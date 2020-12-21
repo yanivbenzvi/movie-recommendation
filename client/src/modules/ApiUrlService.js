@@ -15,4 +15,7 @@ export class ApiUrlService {
 
     static getMovieList(){return ApiUrlService.apiFullRootUrl + 'movie'}
 
+    static getWishList(){return ApiUrlService.apiFullRootUrl + 'wish-list'}
+
+    static addMovieWishList(){return ApiUrlService.apiFullRootUrl + 'wish-list'}
 }

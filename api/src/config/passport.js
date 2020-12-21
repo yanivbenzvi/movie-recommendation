@@ -12,9 +12,7 @@ const jwtOptions = {
 
 const jwt = async (payload, done) => {
     try {
-        console.log(payload)
         const user = await User.findByEmail(payload.sub)
-        console.log(user)
         if (user) {
             return done(null, user)
         }

@@ -71,16 +71,16 @@
 
       save() {
         if (this.prompt) {
-          return 'כן'
+          return 'yes'
         }
         if (this.error) {
-          return 'סגור'
+          return 'close'
         }
-        return 'שמור'
+        return 'save'
       },
 
       cancel() {
-        return this.prompt ? 'לא' : 'ביטול'
+        return this.prompt ? 'no' : 'cancel'
       },
     },
   }
