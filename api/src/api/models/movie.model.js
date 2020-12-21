@@ -19,12 +19,13 @@ export class Movie {
      * @param {String} summary
      * @param {String} created
      */
-    constructor({name, image, summary, rating}) {
+    constructor({name, image, summary, rating, id}) {
         this.name    = name
         this.image   = image
         this.summary = summary
         this.rating  = rating
         this.created = Date.now()
+        this.id      = id
     }
 
     /**
@@ -33,7 +34,7 @@ export class Movie {
      */
     transform() {
         const transformed = {}
-        const fields      = ['name', 'image', 'summary', 'rating', 'created']
+        const fields      = ['id', 'name', 'image', 'summary', 'rating', 'created']
 
         fields.forEach((field) => {
             transformed[field] = this[field]
@@ -76,13 +77,30 @@ export class Movie {
     }
 
     /**
-     * Find get all movies.
+     * Get all movies.
      * @return {Promise<Movie[]>}
      */
     static async getAll() {
         const query    = datastore
             .createQuery('movies')
         const [movies] = await datastore.runQuery(query)
-        return movies?.length > 0 ? movies : []
+
+        return movies?.length > 0 ?
+               movies.map(movie => {
+                   movie['id'] = movie[datastore.KEY].id
+                   return new Movie(movie)
+               }) : []
+    }
+
+    static async getById(id) {
+        const query    = datastore
+            .createQuery('movies')
+            .filter('__key__', '=', id)
+            .limit(1)
+        const [movies] = await datastore.runQuery(query)
+        console.log(movies)
+        movies['id'] = movies[datastore.KEY].id
+        return new Movie(movies)
+
     }
 }

@@ -8,7 +8,7 @@ import {Movie}       from '../models/movie.model'
 export const list = async (req, res, next) => {
     try {
         const movies            = await Movie.getAll()
-        const transformedUsers = movies.map(movie => new Movie(movie).transform())
+        const transformedUsers = movies.map(movie =>movie.transform())
 
         res.json(transformedUsers)
     } catch (error) {

@@ -141,7 +141,6 @@ export class User {
      * @return {Promise<Boolean>}
      */
     async isPasswordMatches(password) {
-        console.log(password, this.password)
         return await bcrypt.compare(password, this.password)
     }
 

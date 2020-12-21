@@ -1,4 +1,4 @@
-# benchmark-frontend
+# movie recommendation
 
 ## Project setup
 ```

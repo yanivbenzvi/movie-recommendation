@@ -16,7 +16,6 @@
         </v-img>
       </template>
 
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
       <v-toolbar-title>Movie recommendation</v-toolbar-title>
 
@@ -38,13 +37,36 @@
           register
         </v-btn>
       </template>
+      <template v-slot:extension>
+        <v-tabs
+            v-model="tab"
+            align-with-title
+        >
+          <v-tabs-slider color="yellow"></v-tabs-slider>
+
+          <v-tab
+              v-for="item in ['home', 'wish list']"
+              :key="item"
+          >
+            {{ item }}
+          </v-tab>
+        </v-tabs>
+      </template>
     </v-app-bar>
 
-      <v-container style="margin-top: 120px"  >
-        <app-movie-list v-if="isAuth"/>
-        <template v-else>
+      <v-container style="margin-top: 220px">
+        <template v-if="!isAuth">
           In order to view movie recommendation you have to login.
         </template>
+        <v-tabs-items v-else v-model="tab">
+          <v-tab-item key="home">
+            <app-movie-list v-if="isAuth"/>
+          </v-tab-item>
+          <v-tab-item key="wish list">
+            <app-movie-wish-list/>
+          </v-tab-item>
+        </v-tabs-items>
+
       </v-container>
   </div>
 </template>
@@ -64,6 +86,7 @@ export default {
   data() {
     return {
       isAuth: false,
+      tab: null
     }
   },
 
